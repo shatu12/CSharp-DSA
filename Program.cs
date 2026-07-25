@@ -1,5 +1,15 @@
-﻿// Console.WriteLine("Hello, World!");
+﻿// Sample input
+string[] strs = new string[] { "eat", "tea", "tan", "ate", "nat", "bat" };
 
-var solver = new ValidAnagramSolution();
-bool result = solver.IsValidSolution("silent", "isten");
-Console.WriteLine($"Result: {result}");
+// Instantiate the solution class
+GroupAnagramsSolution solution = new GroupAnagramsSolution();
+
+// Call the method
+IList<IList<string>> result = solution.GroupAnagram(strs);
+
+// Output the grouped anagrams
+Console.WriteLine("Grouped Anagrams:");
+foreach (var group in result)
+{
+    Console.WriteLine($"[{string.Join(", ", group)}]");
+}
